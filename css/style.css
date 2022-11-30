@@ -21,37 +21,121 @@
     height: 100%;
 }
 
+/* aside */
 #content > aside {
-    width: 200px;
+    position: relative;
+    width: 230px;
     background-color: blue;
 }
 
+#content > aside #logoContainer {
+    height: 120px;
+    background-color: green;
+}
+
+#content > aside nav {
+    height: 100px;
+    background-color: rgb(17, 162, 17);
+}
+
+#content > aside #playlistContainer {
+    height: 100px;
+    background-color: rgb(55, 192, 55);
+}
+
+#content > aside div:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 100px;
+    background-color: rgb(88, 215, 88);
+}
+
+/* main */
 #content > main {
-    width: calc(100vw - 200px); /* 250px = larghezza aside*/
+    width: calc(100vw - 230px); /* 250px = larghezza aside*/
     background-color: red;
+    overflow: auto;
+}
+
+#content > main #banner {
+    height: 120px;
+    background-color: purple;
+}
+
+#content > main nav {
+    max-width: 750px;
+    width: 90%;
+    margin: 0 auto;
+
+    height: 50px;
+    background-color: rgb(137, 25, 137);
+}
+
+main .category {
+    /* height: 200px; */
+    background-color: rgb(143, 61, 143);
+    margin-bottom: 5px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+main .category .card {
+    width: 13vw;
+    height: 13vw;
+    background-color: rgb(156, 99, 156);
 }
 
 /* --- PLAYER --- */
 #player {
     background-color: wheat;
     height: 120px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#player > div {
+    width: 100px;
+    height: 80px;
+    background-color: tomato;
 }
 
 
 
 
 
-
-
 /* Visualizzazione Medium (tablet) */
+@media screen and (max-width: 768px) {
+    main .category .card {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
 /* Visualizzazione Small (smartphone) */
+@media screen and (max-width: 600px) {
+    main .category .card {
+        width: 24vw;
+        height: 24vw;
+    }
+}
 
 /* Visualizzazione Extra Small (small smartphone) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     #content > aside {
         width: 50px;
     }
     #content > main {
         width: calc(100vw - 50px); /* 50px = larghezza aside*/
+    }
+    main .category .card {
+        width: 38vw;
+        height: 38vw;
     }
 }
