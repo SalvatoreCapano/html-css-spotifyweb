@@ -4,3 +4,54 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Approccio Desktop First */
+
+/* Regole Generali */
+
+/* --- CONTENT --- */
+#content {
+    background-color: aquamarine;
+    height: calc(100vh - 120px); /* 120px = altezza player*/
+
+}
+
+#content > * {
+    display: inline-block;
+    height: 100%;
+}
+
+#content > aside {
+    width: 200px;
+    background-color: blue;
+}
+
+#content > main {
+    width: calc(100vw - 200px); /* 250px = larghezza aside*/
+    background-color: red;
+}
+
+/* --- PLAYER --- */
+#player {
+    background-color: wheat;
+    height: 120px;
+}
+
+
+
+
+
+
+
+/* Visualizzazione Medium (tablet) */
+/* Visualizzazione Small (smartphone) */
+
+/* Visualizzazione Extra Small (small smartphone) */
+@media screen and (max-width: 600px) {
+    #content > aside {
+        width: 50px;
+    }
+    #content > main {
+        width: calc(100vw - 50px); /* 50px = larghezza aside*/
+    }
+}
