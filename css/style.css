@@ -8,7 +8,34 @@
 /* Approccio Desktop First */
 
 /* Regole Generali */
+:root {
+    /* Spazi */
+    --spacingExtraSmall: 0.9rem;
+    --spacingSmall: 1.4rem;
+    --spacingMedium: 1.7rem;
+    --spacingLarge: 2.8rem;
 
+    /* Colori */
+    --textColorPrimary: #ffffff;
+    --textColorSecondary: #727479;
+
+    --secondaryColor: #c1c1c1;
+    --activeColor: #adff2f;
+
+    --asideBg: #000000;
+    --mainBg: #141922;
+    --playerBg: #282828;
+
+    /* 
+    white: titoli, icone:active, icone(player)
+    #727479: sottotitoli, icone:inactive, progress bar bg
+    #c1c1c1: progress bar completed, add playlist button
+    black: aside
+    ##141922: main-bg
+    #adff2f: active state
+    #282828: player bg
+    */
+}
 /* --- CONTENT --- */
 #content {
     background-color: aquamarine;
@@ -76,7 +103,6 @@
 }
 
 main .category {
-    /* height: 200px; */
     background-color: rgb(143, 61, 143);
     margin-bottom: 5px;
     display: flex;
