@@ -10,7 +10,7 @@
 /* Regole Generali */
 :root {
     /* Spazi */
-    --spacingExtraSmall: 0.9rem;
+    --spacingExtraSmall: 0.7rem;
     --spacingSmall: 1.4rem;
     --spacingMedium: 1.7rem;
     --spacingLarge: 2.8rem;
@@ -36,33 +36,69 @@
     #282828: player bg
     */
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
 /* --- CONTENT --- */
 #content {
     background-color: aquamarine;
     height: calc(100vh - 120px); /* 120px = altezza player*/
-
 }
 
 #content > * {
     display: inline-block;
     height: 100%;
+    float: left;
 }
 
 /* aside */
 #content > aside {
+    width: 240px;
+    background-color: var(--asideBg);
+
+    font-weight: 600;
     position: relative;
-    width: 230px;
-    background-color: blue;
 }
 
 #content > aside #logoContainer {
-    height: 120px;
-    background-color: green;
+    height: 110px;
+    padding: var(--spacingMedium);
 }
 
-#content > aside nav {
-    height: 100px;
-    background-color: rgb(17, 162, 17);
+#content > aside nav ul li a {
+    display: inline-block;
+    width: 100%;
+
+    padding: var(--spacingExtraSmall) 0;
+    padding-left: var(--spacingMedium);
+
+    color: var(--textColorSecondary);
+
+    border-left: 5px solid transparent;
+}
+
+#content > aside nav ul li a > * {
+    vertical-align: middle;
+    transition: all 0.1s;
+}
+
+#content > aside nav ul li a img {
+    width: 1.8rem;
+    filter: brightness(0.5);
 }
 
 #content > aside #playlistContainer {
@@ -81,15 +117,38 @@
     background-color: rgb(88, 215, 88);
 }
 
+/* hover elementi navbar laterale */
+#content > aside nav ul li:hover span {
+    color: white;
+}
+
+#content > aside nav ul li:hover img {
+    filter: brightness(1);
+}
+
+/* versione active degli elementi della navbar laterale */
+#content > aside nav ul li.active span {
+    color: var(--textColorPrimary);
+    border-color: var(--activeColor);
+}
+
+#content > aside nav ul li.active a img {
+    filter: brightness(1);
+}
+
 /* main */
 #content > main {
-    width: calc(100vw - 230px); /* 250px = larghezza aside*/
+    width: calc(100vw - 240px); /* 250px = larghezza aside*/
     background-color: red;
     overflow: auto;
 }
 
 #content > main #banner {
-    height: 120px;
+    height: 110px;
+    position: sticky;
+    top: 0;
+    left: 0;
+
     background-color: purple;
 }
 
@@ -119,7 +178,7 @@ main .category .card {
 /* --- PLAYER --- */
 #player {
     background-color: wheat;
-    height: 120px;
+    height: 110px;
 
     display: flex;
     justify-content: space-between;
