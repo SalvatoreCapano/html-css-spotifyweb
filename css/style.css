@@ -62,11 +62,10 @@ h2 {
 /* --- CONTENT --- */
 #content {
     background-color: aquamarine;
-    height: calc(100vh - 120px); /* 120px = altezza player*/
+    height: calc(100vh - 110px); /* 120px = altezza player*/
 }
 
 #content > * {
-    display: inline-block;
     height: 100%;
     float: left;
 }
@@ -171,7 +170,6 @@ h2 {
 
     width: 100%;
 
-    /* background-color: rgb(88, 215, 88); */
     padding: 0 var(--spacingMedium);
     padding-bottom: var(--spacingExtraSmall);
 }
@@ -179,6 +177,7 @@ h2 {
 #content > aside #accountContainer > a {
     font-size: var(--fSize-2);
     color: var(--textColorSecondary);
+    transition: all 0.1s;
 }
 
 #content > aside #accountContainer > a img {
@@ -186,41 +185,40 @@ h2 {
     margin-right: var(--spacingExtraSmall);
 }
 
-#content > aside #accountContainer > a > *{
+#content > aside #accountContainer > * > *{
    vertical-align: middle;
 }
 #content > aside #accountContainer hr {
     margin: var(--spacingExtraSmall) 0;
+    border-bottom: none;
 }
 
 #content > aside #accountContainer #account {
     font-size: var(--fSize-3);
     color: var(--textColorPrimary);
     font-weight: 700;
+    cursor: pointer;
 }
 
-#content > aside > div:last-child > #account *{
-    vertical-align: middle;
- }
-
- #content > aside > div:last-child > #account span{
+ #content > aside #accountContainer #account span{
     display: inline-block;
     width: 1.5rem;
     aspect-ratio: 1/1;
     padding: 3px;
     border-radius: 50%;
+
     background-color: var(--secondaryColor);
     margin-right: var(--spacingExtraSmall);
     overflow: hidden;
  }
 
-#content > aside > div:last-child > #account img {
+#content > aside #accountContainer #account span img {
     width: 100%;
 }
 
-
 /* hover elementi navbar laterale */
-#content > aside ul li:hover a {
+#content > aside ul li:hover a,
+#content > aside #accountContainer > a:hover {
     color: white;
 }
 
@@ -247,7 +245,7 @@ h2 {
 #content > main {
     width: calc(100vw - 240px); /* 250px = larghezza aside*/
     background-color: red;
-    overflow: auto;
+    overflow-x: auto;
 }
 
 #content > main #banner {
