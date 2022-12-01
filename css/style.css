@@ -107,6 +107,10 @@ h2 {
     padding-left: var(--spacingMedium);
 }
 
+#content > aside #navbar li {
+    position: relative;
+}
+
 #content > aside #navbar a {
     border-left: 5px solid transparent;
 }
@@ -222,14 +226,23 @@ h2 {
     color: white;
 }
 
-#content > aside nav ul li:hover img {
+#content > aside #navbar ul li:hover img {
     filter: brightness(1);
 }
 
 /* versione active degli elementi della navbar laterale */
 #content > aside #navbar ul li.active a {
     color: var(--textColorPrimary);
-    border-color: var(--activeColor);
+}
+
+#content > aside #navbar ul li.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--activeColor);
 }
 
 #content > aside #navbar ul li.active a img {
@@ -276,13 +289,47 @@ h2 {
     transform: scale(1.15);
 }
 
-#content > main nav {
+#content > main .categorySelector {
     max-width: 750px;
     width: 90%;
     margin: 0 auto;
+}
 
-    height: 50px;
-    background-color: rgb(137, 25, 137);
+#content > main .categorySelector li {
+    display: inline-block;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: var(--fSize-2);
+    font-weight: 600;
+    color: var(--textColorSecondary);
+
+    padding: var(--spacingSmall) 0;
+    margin-right: var(--spacingSmall);
+
+    position: relative;
+    cursor: pointer;
+}
+
+/* stato active e hover degli elementi della navbar delle categorie */
+#content > main .categorySelector li.active {
+    color: var(--textColorPrimary);
+}
+
+#content > main .categorySelector li.active::before {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+
+    height: 2px;
+    width: 30%;
+    transform: translateX(-50%);
+
+    background-color: var(--activeColor);
+}
+
+#content > main .categorySelector li:hover {
+    color: var(--textColorPrimary);
 }
 
 main .category {
