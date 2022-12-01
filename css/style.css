@@ -244,7 +244,7 @@ h2 {
 /* main */
 #content > main {
     width: calc(100vw - 240px); /* 250px = larghezza aside*/
-    background-color: red;
+    background-color: var(--mainBg);
     overflow-x: auto;
 }
 
@@ -254,7 +254,26 @@ h2 {
     top: 0;
     left: 0;
 
-    background-color: purple;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: right;
+
+    padding: var(--spacingMedium);
+}
+
+#content > main #banner .btn {
+    display: inline-block;
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-2);
+    font-weight: 600;
+    text-transform: uppercase;
+
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    padding: 0.7em 2.4em;
+}
+
+#banner .btn:hover {
+    transform: scale(1.15);
 }
 
 #content > main nav {
