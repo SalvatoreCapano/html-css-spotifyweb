@@ -10,9 +10,9 @@
 /* Regole Generali */
 :root {
     /* Spazi */
-    --spacingExtraSmall: 0.7rem;
-    --spacingSmall: 1.4rem;
-    --spacingMedium: 1.7rem;
+    --spacingExtraSmall: 0.6rem;
+    --spacingSmall: 1.1rem;
+    --spacingMedium: 1.6rem;
     --spacingLarge: 2.8rem;
 
     /* Colori */
@@ -35,6 +35,10 @@
     #adff2f: active state
     #282828: player bg
     */
+
+    /* Font Size */
+    --fSize-2: 0.8rem;
+    --fSize-3: 0.9rem;
 }
 
 body {
@@ -51,7 +55,9 @@ a {
     text-decoration: none;
 }
 
-
+h2 {
+    color: var(--textColorPrimary);
+}
 
 /* --- CONTENT --- */
 #content {
@@ -70,55 +76,151 @@ a {
     width: 240px;
     background-color: var(--asideBg);
 
+    min-height: 500px;
+
     font-weight: 600;
     position: relative;
 }
 
 #content > aside #logoContainer {
-    height: 110px;
+    height: 100px;
     padding: var(--spacingMedium);
 }
 
-#content > aside nav ul li a {
+#content #logoContainer a:last-child{
+    display: none;
+}
+
+#content #logoContainer img {
+    height: 100%;
+}
+
+/* questo vale sia per la lista del nav che per quella delle playlist */
+#content > aside ul li a {
     display: inline-block;
     width: 100%;
 
+    font-size: var(--fSize-2);
+    color: var(--textColorSecondary);
+    transition: all 0.1s;
+
     padding: var(--spacingExtraSmall) 0;
     padding-left: var(--spacingMedium);
+}
 
-    color: var(--textColorSecondary);
-
+#content > aside #navbar a {
     border-left: 5px solid transparent;
 }
 
-#content > aside nav ul li a > * {
+#content > aside #navbar a > * {
     vertical-align: middle;
-    transition: all 0.1s;
 }
 
-#content > aside nav ul li a img {
+#content > aside #navbar ul li a img {
     width: 1.8rem;
     filter: brightness(0.5);
 }
 
 #content > aside #playlistContainer {
-    height: 100px;
-    background-color: rgb(55, 192, 55);
+    margin-top: var(--spacingSmall);
 }
 
-#content > aside div:last-child {
+#content > aside #playlistContainer h2 {
+    font-size: var(--fSize-3);
+    margin-left: var(--spacingMedium);
+    margin-bottom: var(--spacingExtraSmall);
+}
+
+#content > aside #playlistContainer button {
+    font-size: var(--fSize-3);
+    color: var(--textColorSecondary);
+    
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    padding-right: var(--spacingExtraSmall);
+    margin-left: var(--spacingMedium);
+    margin-bottom: var(--spacingSmall);
+}
+
+#content > aside #playlistContainer button  span{
+    height: var(--spacingLarge);
+    aspect-ratio: 1/1;
+
+    background-color: var(--secondaryColor);
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: var(--spacingExtraSmall);
+}
+
+#content > aside #accountContainer {
     position: absolute;
     bottom: 0;
     left: 0;
 
     width: 100%;
 
-    height: 100px;
-    background-color: rgb(88, 215, 88);
+    /* background-color: rgb(88, 215, 88); */
+    padding: 0 var(--spacingMedium);
+    padding-bottom: var(--spacingExtraSmall);
 }
 
+#content > aside #accountContainer > a {
+    font-size: var(--fSize-2);
+    color: var(--textColorSecondary);
+}
+
+#content > aside #accountContainer > a img {
+    width: 15px;
+    margin-right: var(--spacingExtraSmall);
+}
+
+#content > aside #accountContainer > a > *{
+   vertical-align: middle;
+}
+#content > aside #accountContainer hr {
+    margin: var(--spacingExtraSmall) 0;
+}
+
+#content > aside #accountContainer #account {
+    font-size: var(--fSize-3);
+    color: var(--textColorPrimary);
+    font-weight: 700;
+}
+
+#content > aside > div:last-child > #account *{
+    vertical-align: middle;
+ }
+
+ #content > aside > div:last-child > #account span{
+    display: inline-block;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    margin-right: var(--spacingExtraSmall);
+    overflow: hidden;
+ }
+
+#content > aside > div:last-child > #account img {
+    width: 100%;
+}
+
+
 /* hover elementi navbar laterale */
-#content > aside nav ul li:hover span {
+#content > aside ul li:hover a {
     color: white;
 }
 
@@ -127,13 +229,18 @@ a {
 }
 
 /* versione active degli elementi della navbar laterale */
-#content > aside nav ul li.active span {
+#content > aside #navbar ul li.active a {
     color: var(--textColorPrimary);
     border-color: var(--activeColor);
 }
 
-#content > aside nav ul li.active a img {
+#content > aside #navbar ul li.active a img {
     filter: brightness(1);
+}
+
+/* hover pulsante crea playlist */
+#content > aside #playlistContainer button:hover {
+    background-color: var(--secondaryColor);
 }
 
 /* main */
@@ -144,7 +251,7 @@ a {
 }
 
 #content > main #banner {
-    height: 110px;
+    height: 100px;
     position: sticky;
     top: 0;
     left: 0;
@@ -179,6 +286,7 @@ main .category .card {
 #player {
     background-color: wheat;
     height: 110px;
+    width: 100vw;
 
     display: flex;
     justify-content: space-between;
@@ -214,7 +322,7 @@ main .category .card {
 /* Visualizzazione Extra Small (small smartphone) */
 @media screen and (max-width: 500px) {
     #content > aside {
-        width: 50px;
+        width: fit-content;
     }
     #content > main {
         width: calc(100vw - 50px); /* 50px = larghezza aside*/
@@ -223,4 +331,32 @@ main .category .card {
         width: 38vw;
         height: 38vw;
     }
+
+    #content aside #logoContainer {
+        padding: 0 var(--spacingExtraSmall);
+        padding-top: var(--spacingExtraSmall);
+        height: unset;
+    }
+
+    #content #logoContainer a:first-child {
+        display: none;
+    }
+    #content #logoContainer a:last-child {
+        display: block;
+    }
+    #content aside nav ul li a {
+        padding-left: var(--spacingExtraSmall);
+        padding-right: var(--spacingExtraSmall);
+
+        border-left: none;
+    }
+    #content aside nav ul span {
+        display: none;
+    }
+    #playlistContainer {
+        display: none;
+    }
+    /* #content > aside > div:last-child #text{
+        display: none;
+    } */
 }
