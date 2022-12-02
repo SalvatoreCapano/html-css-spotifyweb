@@ -468,6 +468,57 @@ main .category .artist:hover .imgContainer::after {
     margin-right: var(--spacingExtraSmall);
 }
 
+#player #controlsCenter .buttons {
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-5);
+    text-align: center;
+}
+
+#player #controlsCenter .buttons i {
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#player #controlsCenter .buttons i:first-child,
+#player #controlsCenter .buttons i:nth-of-type(4) {
+    margin-right: var(--spacingExtraSmall);
+}
+
+#player #controlsCenter .buttons .play {
+    margin: 0 var(--spacingMedium);
+    font-size: 2rem;
+}
+
+
+#player #controlsCenter .barContainer > * {
+    vertical-align: middle;
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-2);
+    font-weight: 600;
+}
+
+#player #controlsCenter .barContainer .bar {
+    display: inline-block;
+    width: 35vw;
+    height: 4px;
+    border-radius: 2px;
+    margin: 0 var(--spacingSmall);
+    background-color: var(--textColorSecondary);
+    position: relative;
+}
+
+#player #controlsCenter .barContainer .bar::before {
+    content: '';
+    height: 100%;
+    width: 20%;
+    background-color: var(--secondaryColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+}
+
 /* ----------------------------- */
 /*         MEDIA QUERIES         */
 /* ------------------------------ */
