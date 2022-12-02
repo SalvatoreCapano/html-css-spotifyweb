@@ -613,14 +613,16 @@ main .category .artist:hover .imgContainer::after {
 /* ------------------------------ */
 
 @media screen and (max-width: 1100px) {
-    main > .category .albumContainer .album {
+    main > .category .albumContainer .album,
+    main > .category .artistContainer .artist {
         width: 16vw;
     }
 }
 
 /* Visualizzazione Medium (tablet) */
 @media screen and (max-width: 768px) {
-    main > .category .albumContainer .album {
+    main > .category .albumContainer .album,
+    main > .category .artistContainer .artist {
         width: 14vw;
     }
 
@@ -631,14 +633,16 @@ main .category .artist:hover .imgContainer::after {
 }
 
 @media screen and (max-width: 680px) {
-    main > .category .albumContainer .album {
+    main > .category .albumContainer .album,
+    main > .category .artistContainer .artist {
         width: 17vw;
     }
 }
 
 /* Visualizzazione Small (smartphone) */
 @media screen and (max-width: 590px) {
-    main > .category .albumContainer .album  {
+    main > .category .albumContainer .album,
+    main > .category .artistContainer .artist  {
         width: 22vw;
     }
 
@@ -721,7 +725,8 @@ main .category .artist:hover .imgContainer::after {
         width: calc(100vw - 1.8rem - (var(--spacingExtraSmall) * 2)); /*1.8rem = larghezza icone  |  var * 2 = padding laterali*/
     }
 
-    main > .category .albumContainer .album  {
+    main > .category .albumContainer .album,
+    main > .category .artistContainer .artist  {
         width: 37vw;
     }
 
