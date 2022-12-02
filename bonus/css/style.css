@@ -380,12 +380,14 @@ main .category .artistContainer {
     display: flex;
     flex-direction: row;
     gap: var(--spacingSmall);
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
 }
 
 main .category .album,
 main .category .artist {
-    width: 13vw;
+    width: 250px;
+    min-width: 250px;
     text-align: center;
     cursor: pointer;
 }
@@ -612,35 +614,35 @@ main .category .artist:hover .imgContainer::after {
 /*         MEDIA QUERIES         */
 /* ------------------------------ */
 
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
     main > .category .albumContainer .album {
         width: 16vw;
     }
-}
+} */
 
 /* Visualizzazione Medium (tablet) */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     main > .category .albumContainer .album {
         width: 14vw;
-    }
+    } 
 
-    main .category .albumContainer,
+     main .category .albumContainer,
     main .category .artistContainer {
         gap: var(--spacingExtraSmall);
     }
-}
+} */
 
-@media screen and (max-width: 680px) {
+/* @media screen and (max-width: 680px) {
     main > .category .albumContainer .album {
         width: 17vw;
     }
-}
+} */
 
 /* Visualizzazione Small (smartphone) */
 @media screen and (max-width: 590px) {
-    main > .category .albumContainer .album  {
+    /* main > .category .albumContainer .album  {
         width: 22vw;
-    }
+    } */
 
     .bar {
         width: 10vw;
@@ -721,11 +723,18 @@ main .category .artist:hover .imgContainer::after {
         width: calc(100vw - 1.8rem - (var(--spacingExtraSmall) * 2)); /*1.8rem = larghezza icone  |  var * 2 = padding laterali*/
     }
 
-    main > .category .albumContainer .album  {
+    /* main > .category .albumContainer .album  {
         width: 37vw;
-    }
+    } */
 
     #player {
         padding: 0 var(--spacingExtraSmall);
+    }
+}
+
+/* punto bonus 2: nascondere la cta quando la finestra è chiusa in altezza */
+@media screen and (max-height: 220px){
+    #banner {
+        display: none;
     }
 }
