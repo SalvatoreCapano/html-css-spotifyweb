@@ -413,6 +413,7 @@ main .category .artist:hover .imgContainer::after {
     background-color: wheat;
     height: 110px;
     width: 100vw;
+    padding: 0 var(--spacingMedium);
 
     display: flex;
     justify-content: space-between;
@@ -420,11 +421,52 @@ main .category .artist:hover .imgContainer::after {
 }
 
 #player > div {
-    width: 100px;
-    height: 80px;
+    /* width: 100px;
+    height: 80px; */
     background-color: tomato;
 }
 
+#player #playing > div {
+    display: inline-block;
+    margin-bottom: -4px;
+    vertical-align: middle;
+}
+
+#player #playing .song > * {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+#player #playing .imgContainer {
+    width: var(--spacingLarge);
+    margin-right: var(--spacingExtraSmall);
+}
+
+#player #playing .infoContainer .songName {
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-2);
+    line-height: 0.8em;
+}
+
+#player #playing .infoContainer .subtitle {
+    color: var(--textColorSecondary);
+    font-size: var(--fSize-1);
+}
+
+#player #playing img {
+    width: 100%;
+    display: block;
+}
+
+#player #playing .addTo {
+    margin-left: var(--spacingMedium);
+    color: var(--textColorSecondary);
+}
+
+#player #playing .addTo i {
+    margin-right: var(--spacingExtraSmall);
+}
 
 /* ----------------------------- */
 /*         MEDIA QUERIES         */
