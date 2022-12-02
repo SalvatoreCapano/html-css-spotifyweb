@@ -20,16 +20,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
 </head>
 <body>
+
     <div id="content" class="clearfix">
+
         <aside>
+
             <div id="logoContainer">
-                <a href="#">
+
+                <a class="largeLogo" href="#">
                     <img src="img/logo.svg" alt="Spotify-logo">
                 </a>
-                <a href="#">
+
+                <a class="smallLogo" href="#">
                     <img src="img/logo-small.svg" alt="Spotify-logo-small">
                 </a>
+
             </div> <!-- /logoContainer-->
+
             <nav id="navbar">
                 <ul>
                     <li class="active">
@@ -52,12 +59,16 @@
                     </li>
                 </ul>
             </nav>
+
             <div id="playlistContainer">
+
                 <h2>PLAYLIST</h2>
+
                 <button>
                     <span>+</span>
                     Crea Playlist
                 </button>
+
                 <ul>
                     <li>
                         <a href="#">Nome Playlist</a>
@@ -80,24 +91,33 @@
                     <li>
                         <a href="#">Nome Playlist</a>
                     </li>
+                    
                 </ul>
+
             </div> <!-- /playlistContainer-->
+
             <div id="accountContainer">
+
                 <a href="#">
                     <img src="img/download.svg" alt="download">
                     <span>Installa app</span>
                 </a>
+
                 <hr>
+
                 <div id="account">
                     <span>
                         <img src="img/profile.svg" alt="profile">
                     </span>
                     <span>John Doe</span>
                 </div>
+
             </div>
+
         </aside>
 
         <main>
+
             <div id="banner">
                 <a class="btn" href="#">effettua l'upgrade</a>
             </div> <!-- /banner-->
@@ -114,6 +134,7 @@
             </nav> <!-- /categorySelector-->
 
             <div class="category">
+
                 <div class="infoContainer">
                     <h2 class="categoryName">Recently Played</h2>
                 </div>
@@ -216,40 +237,60 @@
                     </div> <!-- /album-->
                 </div> <!-- /albumContainer-->
             </div> <!-- /category-->
+
         </main>
+
     </div> <!-- /content-->
 
     <div id="player">
+
         <div id="playing">
-            <div class="song">
-                <div class="imgContainer">
-                    <img src="img/sinister.jpeg" alt="sinister">
-                </div>
-                <div class="infoContainer">
-                    <h4 class="songName">Sinister</h4>
-                    <span class="subtitle">Brano Nome</span>
-                </div>
-            </div>
+
+            <div class="imgContainer">
+                <img src="img/sinister.jpeg" alt="sinister">
+            </div> <!-- /imgContainer-->
+
+            <div class="infoContainer">
+                <h4 class="songName">Sinister</h4>
+                <span class="subtitle">Brano Nome</span>
+            </div> <!-- /infoContainer-->
+
             <div class="addTo">
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-regular fa-folder"></i>
-            </div>
-        </div>
+            </div> <!-- /addTo-->
+
+        </div> <!-- /playing-->
+
         <div id="controlsCenter">
+
             <div class="buttons">
                 <i class="fa-solid fa-shuffle"></i>
                 <i class="fa-solid fa-backward-step"></i>
                 <i class="fa-regular fa-circle-play play"></i>
                 <i class="fa-solid fa-forward-step"></i>
                 <i class="fa-solid fa-rotate-right"></i>
-            </div>
+            </div> <!-- /buttons-->
+
             <div class="barContainer">
                 <span>0:25</span>
                 <div class="bar"></div>
                 <span>4:35</span>
-            </div>
+            </div> <!-- /barContainer-->
+
+        </div> <!-- /controlsCenter-->
+
+        <div id="controlsRight">
+            
+            <i class="fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-display"></i>
+            <i class="fa-solid fa-volume-low"></i>
+         
+            <div class="bar"></div>
+            
         </div>
-        <div id="controlsRight"></div>
+
     </div> <!-- /player-->
+
 </body>
 </html>
