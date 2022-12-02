@@ -1,0 +1,731 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Approccio Desktop First */
+
+/* Regole Generali */
+:root {
+    /* Spazi */
+    --spacingExtraSmall: 0.5rem;
+    --spacingSmall: 1rem;
+    --spacingMedium: 1.4rem;
+    --spacingLarge: 2.4rem;
+
+    /* Colori */
+    --textColorPrimary: #ffffff;
+    --textColorSecondary: #727479;
+
+    --secondaryColor: #c1c1c1;
+    --activeColor: #adff2f;
+
+    --asideBg: #000000;
+    --mainBg: #141922;
+    --playerBg: #282828;
+
+    /* Font Size */
+    --fSize-1: 0.6rem;
+    --fSize-2: 0.7rem;
+    --fSize-3: 0.75rem;
+    --fSize-4: 0.80rem;
+    --fSize-5: 1.2rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: var(--textColorPrimary);
+}
+
+/* ----------------------------- */
+/*            CONTENT            */
+/* ----------------------------- */
+#content {
+    background-color: var(--mainBg);
+    height: calc(100vh - 110px); /* 120px = altezza player*/
+}
+
+#content > * {
+    height: 100%;
+    float: left;
+}
+
+/* --- ASIDE --- */
+#content aside {
+    width: 240px;
+    height: 100%;
+
+    font-weight: 600;
+    background-color: var(--asideBg);
+    
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#content aside #logoContainer {
+    height: 100px;
+    padding: var(--spacingMedium);
+}
+
+#content aside #logoContainer .smallLogo{
+    display: none;
+}
+
+#content aside #logoContainer img {
+    height: 100%;
+}
+
+/* questo vale sia per la lista del nav che per quella delle playlist */
+#content aside ul li a {
+    display: inline-block;
+    width: 100%;
+
+    font-size: var(--fSize-2);
+    color: var(--textColorSecondary);
+    transition: all 0.1s;
+
+    padding: var(--spacingExtraSmall) 0;
+    padding-left: var(--spacingMedium);
+}
+
+/* navbar dell'aside */
+#content aside #navbar li {
+    position: relative;
+}
+
+#content aside #navbar li a > * {
+    vertical-align: middle;
+}
+
+#content aside #navbar ul li a img {
+    width: 1.8rem;
+    filter: brightness(0.5);
+}
+
+/* sezione playlist */
+#content aside #playlistContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#content aside #playlistContainer {
+    margin-top: var(--spacingSmall);
+    overflow: hidden;
+}
+
+#content aside #playlistContainer h2 {
+    font-size: var(--fSize-3);
+    margin-left: var(--spacingMedium);
+    margin-bottom: var(--spacingExtraSmall);
+}
+
+#content aside #playlistContainer button {
+    font-size: var(--fSize-3);
+    font-weight: 600;
+    color: var(--textColorSecondary);
+    font-family: 'Montserrat', sans-serif;  /*la font family non era stata applicata al button (?)*/
+
+    width: fit-content;
+    
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    padding-right: var(--spacingExtraSmall);
+    margin-left: var(--spacingMedium);
+    margin-bottom: var(--spacingSmall);
+}
+
+#content aside #playlistContainer button span{
+    height: var(--spacingLarge);
+    aspect-ratio: 1/1;
+
+    background-color: var(--secondaryColor);
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: var(--spacingExtraSmall);
+}
+
+#content aside #playlistContainer ul {
+    overflow: auto;
+}
+
+/* sezione account in basso nell'aside */
+#content aside #accountContainer {
+    padding: 0 var(--spacingMedium);
+    margin-bottom: var(--spacingExtraSmall);
+
+    box-shadow: 0px -10px 50px 10px;
+}
+
+#content aside #accountContainer > a{
+    font-size: var(--fSize-2);
+    color: var(--textColorSecondary);
+    transition: all 0.1s;
+}
+
+#content aside #accountContainer > a img {
+    width: 15px;
+    margin-right: var(--spacingExtraSmall);
+    filter: brightness(0.5);
+    transition: all 0.1s;
+}
+
+#content aside #accountContainer > * > *{
+   vertical-align: middle;
+}
+#content aside #accountContainer hr {
+    margin: var(--spacingExtraSmall) 0;
+    border-bottom: none;
+}
+
+#content aside #accountContainer #account {
+    font-size: var(--fSize-3);
+    color: var(--textColorPrimary);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#content aside #accountContainer #account span:first-child {
+    /* icona utente */
+    display: inline-block;
+    width: 1.8rem;
+    aspect-ratio: 1/1;
+    padding: 3px;
+    border-radius: 50%;
+
+    background-color: var(--secondaryColor);
+    margin-right: var(--spacingExtraSmall);
+    overflow: hidden;
+ }
+
+#content aside #accountContainer #account span:first-child img {
+    width: 100%;
+}
+
+/* hover elementi navbar laterale */
+#content aside ul li:hover a,
+#content aside #accountContainer > a:hover {
+    color: white;
+}
+
+#content aside #navbar ul li:hover img,
+#content aside #accountContainer > a:hover img {
+    filter: brightness(1);
+}
+
+/* versione active degli elementi della navbar laterale */
+#content aside #navbar ul li.active a {
+    color: var(--textColorPrimary);
+}
+
+#content aside #navbar ul li.active a img {
+    filter: brightness(1);
+}
+
+#content aside #navbar ul li.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--activeColor);
+}
+
+/* hover pulsante crea playlist */
+#content aside #playlistContainer button:hover {
+    color: var(--textColorPrimary);
+}
+
+/* --- MAIN --- */
+#content main {
+    width: calc(100vw - 240px); /* 240px = larghezza aside*/
+    background-color: var(--mainBg);
+    overflow-y: auto;
+}
+
+/* banner con call to action del main */
+#content main #banner {
+    height: 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    padding: var(--spacingMedium);
+    z-index: 30;
+}
+
+#content main #banner .btn {
+    display: inline-block;
+    
+    font-size: var(--fSize-2);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--textColorPrimary);
+
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    padding: 1em 2.4em;
+}
+
+#content main #banner .btn:hover {
+    transform: scale(1.15);
+}
+
+/* selettore di categorie in alto nel main */
+#content main .categorySelector {
+    max-width: 750px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#content main .categorySelector li {
+    display: inline-block;
+    list-style: none;
+
+    text-transform: uppercase;
+    font-size: var(--fSize-2);
+    font-weight: 600;
+    color: var(--textColorSecondary);
+
+    padding-top: var(--spacingSmall);
+    padding-bottom: var(--spacingExtraSmall);
+    margin-right: var(--spacingSmall);
+
+    position: relative;
+    cursor: pointer;
+}
+
+/* classe active e hover degli elementi della navbar delle categorie */
+#content main .categorySelector li.active {
+    color: var(--textColorPrimary);
+}
+
+#content main .categorySelector li.active::before {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+
+    height: 2px;
+    width: 30%;
+    transform: translateX(-50%);
+
+    background-color: var(--activeColor);
+}
+
+#content main .categorySelector li:hover {
+    color: var(--textColorPrimary);
+}
+
+/* sezione degli album */
+main .category {
+    margin: 0 var(--spacingMedium);
+}
+
+main .category .infoContainer {
+    margin: var(--spacingLarge) 0;
+}
+
+main .category .infoContainer h2 {
+    font-size: var(--fSize-5);
+    margin-bottom: var(--spacingExtraSmall);
+}
+
+main .infoContainer p,
+main .category .album .subtitle {
+    color: var(--textColorSecondary);
+    font-weight: 700;
+    font-size: var(--fSize-2);
+}
+
+main .category .albumContainer,
+main .category .artistContainer {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacingSmall);
+    flex-wrap: wrap;
+}
+
+main .category .album,
+main .category .artist {
+    width: 13vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+main .category .imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+main .category .album .albumCover,
+main .category .artist .artistPhoto {
+    width: 100%;
+    display: block;
+    margin-bottom: var(--spacingMedium);
+}
+
+main .category .artist .artistPhoto,
+main .category .artist .imgContainer::before {
+    border-radius: 50%;
+}
+
+main .category .album .albumName,
+main .category .artist .artistName {
+    font-size: var(--fSize-4);
+    font-weight: 800;
+    color: var(--textColorPrimary);
+    margin-bottom: var(--spacingExtraSmall);
+}
+
+/* Album e artist hover effects */
+main .category .album:hover .imgContainer::before,
+main .category .artist:hover .imgContainer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
+}
+
+main .category .album:hover .imgContainer::after,
+main .category .artist:hover .imgContainer::after {
+    font-family: FontAwesome;
+    content: '\f144';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--textColorPrimary);
+    font-size: 2.5rem;
+    z-index: 5;
+}
+
+/* --- PLAYER --- */
+#player {
+    height: 110px;
+    width: 100vw;
+    padding: 0 var(--spacingMedium);
+
+    background-color: var(--playerBg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 30;
+    position: relative;
+}
+
+/* player - left */
+#player #playing {
+    display: flex;
+    align-items: center;
+    gap: var(--spacingExtraSmall);
+}
+
+#player #playing .imgContainer {
+    width: var(--spacingLarge);
+}
+
+#player #playing .imgContainer img {
+    width: 100%;
+    display: block;
+}
+
+#player #playing .infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#player #playing .infoContainer .songName {
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-2);
+}
+
+#player #playing .infoContainer .subtitle {
+    color: var(--textColorSecondary);
+    font-size: var(--fSize-1);
+}
+
+#player #playing .addTo {
+    color: var(--textColorSecondary);
+}
+
+#player #playing .addTo i:hover {
+    color: var(--secondaryColor);
+    cursor: pointer;
+}
+
+/* player - center */
+#player #controlsCenter .buttons {
+    color: var(--textColorPrimary);
+    text-align: center;
+    margin-bottom: var(--spacingSmall);
+}
+
+#player #controlsCenter .buttons i {
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 2px;
+}
+
+#player #controlsCenter .buttons i:first-child,
+#player #controlsCenter .buttons i:nth-of-type(4) {
+    margin-right: var(--spacingExtraSmall);
+}
+
+#player #controlsCenter .buttons .play {
+    margin: 0 var(--spacingMedium);
+    font-size: 1.4rem;
+}
+
+#player #controlsCenter .buttons .play:hover {
+    transform: scale(1.2);
+}
+
+#player #controlsCenter .barContainer {
+    /* servono a centrare il container della barra 
+    quando esso diventa più stretto del container delle icone sopra*/
+    width: fit-content;
+    margin:  0 auto;
+}
+
+#player #controlsCenter .barContainer > * {
+    vertical-align: middle;
+    color: var(--textColorPrimary);
+    font-size: var(--fSize-1);
+    font-weight: 600;
+}
+
+/* barra durata video E barra volume */
+.bar {
+    display: inline-block;
+    width: 20vw;
+    height: 4px;
+
+    border-radius: 2px;
+    background-color: var(--textColorSecondary);
+
+    /* solo per durata video */
+    margin: 0 var(--spacingExtraSmall);
+    position: relative;
+    cursor: pointer;
+}
+
+.bar::before {
+    content: '';
+    height: 100%;
+    width: 20%;
+
+    border-radius: inherit;
+    background-color: var(--secondaryColor);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bar:hover::before {
+    background-color: var(--activeColor);
+}
+
+.bar:hover::after {
+    content: '';
+    display: inline-block;
+
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--textColorPrimary);
+
+
+    position: absolute;
+    top: 50%;
+    left: 19%;
+    transform: translateY(-50%);
+}
+
+/* player - right */
+#controlsRight {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondaryColor);
+}
+
+#controlsRight .bar {
+    width: 80px;
+    flex-shrink: 1;
+    margin: 0;
+}
+#controlsRight i:hover {
+    cursor: pointer;
+}
+
+/* ----------------------------- */
+/*         MEDIA QUERIES         */
+/* ------------------------------ */
+
+@media screen and (max-width: 1100px) {
+    main > .category .albumContainer .album {
+        width: 16vw;
+    }
+}
+
+/* Visualizzazione Medium (tablet) */
+@media screen and (max-width: 768px) {
+    main > .category .albumContainer .album {
+        width: 14vw;
+    }
+
+    main .category .albumContainer,
+    main .category .artistContainer {
+        gap: var(--spacingExtraSmall);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    main > .category .albumContainer .album {
+        width: 17vw;
+    }
+}
+
+/* Visualizzazione Small (smartphone) */
+@media screen and (max-width: 590px) {
+    main > .category .albumContainer .album  {
+        width: 22vw;
+    }
+
+    .bar {
+        width: 10vw;
+    }
+
+    #controlsRight .bar {
+        width: 30px;
+    }
+}
+
+/* Visualizzazione Extra Small (small smartphone) */
+@media screen and (max-width: 500px) {
+    #content aside {
+        width: fit-content;
+    }
+
+    #content aside #logoContainer {
+        padding: 0 var(--spacingExtraSmall);
+        padding-top: var(--spacingExtraSmall);
+        height: unset;
+    }
+
+    #content aside #logoContainer .largeLogo {
+        display: none;
+    }
+
+    #content aside #logoContainer .smallLogo {
+        display: block;
+    }
+
+    #content aside #navbar ul li.active::before {
+        content: unset;
+    }
+
+    #content aside #navbar ul li a {
+        padding-left: var(--spacingExtraSmall);
+        padding-right: var(--spacingExtraSmall);
+    }
+
+    #content aside #navbar ul li a span {
+        display: none;
+    }
+
+    #content aside #playlistContainer {
+        display: none;
+    }
+
+    #content aside #accountContainer {
+        padding: 0 var(--spacingExtraSmall);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    #content aside #accountContainer > a {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+        margin-bottom: var(--spacingExtraSmall);
+    }
+
+    #content aside #accountContainer > a img {
+        margin-right: 0;
+    }
+
+    #content aside #accountContainer > a span,
+    #content aside #accountContainer hr,
+    #content aside #accountContainer #account span:last-child {
+        display: none;
+    }
+
+    #content aside #accountContainer #account span:first-child {
+        margin: 0;
+    }
+    
+    #content > main {
+        width: calc(100vw - 1.8rem - (var(--spacingExtraSmall) * 2)); /*1.8rem = larghezza icone  |  var * 2 = padding laterali*/
+    }
+
+    main > .category .albumContainer .album  {
+        width: 37vw;
+    }
+
+    #player {
+        padding: 0 var(--spacingExtraSmall);
+    }
+}
